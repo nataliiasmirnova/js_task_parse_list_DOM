@@ -10,7 +10,7 @@ function convertation(arg) {
 }
 
 // Function getEmployees
-function getEmployeesConvertation(data) {
+function getEmployees(data) {
   const listOfEmployees = dataList.map((item) => ({
     name: item.textContent.trim(),
     position: item.dataset.position,
@@ -21,7 +21,7 @@ function getEmployeesConvertation(data) {
   return listOfEmployees;
 }
 
-const list = getEmployeesConvertation(dataList);
+const list = getEmployees(dataList);
 
 // Getting sorted list
 function sortList(dataToSort) {
@@ -45,7 +45,7 @@ sortedItems.forEach((item) => {
   const li = document.createElement('li');
 
   li.textContent = `${item.name}`;
-  li.dataset.position = `${item.age}`;
+  li.dataset.position = `${item.position}`;
   li.dataset.salary = `${item.salary}`;
   li.dataset.age = `${item.age}`;
   originalList.appendChild(li);
